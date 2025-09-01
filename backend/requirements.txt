@@ -1,6 +1,6 @@
 annotated-types==0.7.0
 anyio==4.10.0
-bcrypt==4.3.0
+bcrypt==4.0.1
 cffi==1.17.1
 click==8.2.1
 cryptography==45.0.6
@@ -12,7 +12,7 @@ idna==3.10
 iniconfig==2.1.0
 limits==5.5.0
 packaging==25.0
-passlib==1.7.4
+passlib[bcrypt]==1.7.4
 pluggy==1.6.0
 pyasn1==0.6.1
 pycparser==2.22
@@ -21,6 +21,7 @@ pydantic_core==2.33.2
 Pygments==2.19.2
 pytest==8.4.1
 python-jose==3.5.0
+python-multipart==0.0.7
 rsa==4.9.1
 six==1.17.0
 slowapi==0.1.9
