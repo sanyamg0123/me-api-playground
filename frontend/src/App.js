@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_BASE = 'http://localhost:8000';  // Change to hosted URL later
+const API_BASE = 'https://me-api-playground-4-35m3.onrender.com';  // Change to hosted URL later
 
 function App() {
   const [profile, setProfile] = useState(null);
