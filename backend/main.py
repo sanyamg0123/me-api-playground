@@ -6,20 +6,23 @@ from slowapi.util import get_remote_address
 from structlog import get_logger
 from sqlalchemy.orm import Session
 from typing import Optional
-import backend.crud as crud  # Absolute import
-import backend.schemas as schemas  # Absolute import
-import backend.database as database  # Absolute import
-import backend.auth as auth  # Absolute import
-from backend.auth import create_access_token, authenticate_user  # Absolute import
+import backend.crud as crud
+import backend.schemas as schemas
+import backend.database as database
+import backend.auth as auth
+from backend.auth import create_access_token, authenticate_user
 
 app = FastAPI()
 logger = get_logger()
 limiter = Limiter(key_func=get_remote_address)
 app.state.limiter = limiter
 
+# ✅ Update this to your frontend Vercel URL in production
+FRONTEND_URL = "https://me-api-playground-silk.vercel.app"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update to frontend URL in prod
+    allow_origins=[FRONTEND_URL],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
